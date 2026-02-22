@@ -4,7 +4,7 @@ EQUIPE:
     - ANNY
     - LUCAS
 TEMA:
-
+    - BANDAS DE ROCK
 
 */
 
@@ -93,12 +93,7 @@ int main ()
         cout << info[tamanho].ano << "|";
         cout << info[tamanho].musicasFamosas << " | " << endl;
 
-        // INSERINDO NO ARQUIVO
-        // algo nao está certo aqui...
-        ofstream arquivo("dados.csv");
-        for(int j = 0; j < tamanho; j++){
-            arquivo << info[j].identificador << ',' << info[j].nome << ',' << info[j].estiloMusical << ',' << info[j].ano << ',' << info[j].musicasFamosas << endl;
-        }
+        
     }
     arquivo.close();
     return 0;
