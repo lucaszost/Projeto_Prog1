@@ -55,12 +55,16 @@ int main ()
             break
         case 1: // ler arquivo
             LerDados()
+            cout << menu << endl;
         case 2: // gravar novo item
             EscreverDados()
+            cout << menu << endl;
         case 3: // remover item
             RemoverDados()
+            cout << menu << endl;
         case 4: // buscar item
             BuscarRegistro()
+            cout << menu << endl;
         case 5: // salvar alteracoes
             
             
@@ -93,11 +97,11 @@ int main ()
         info[i].ano = stoi(ano);
         info[i].musicasFamosas = stoi(musicasFamosas);
 
-        cout << info[i].identificador << " | ";
-        cout << info[i].nome << "|";
-        cout << info[i].estiloMusical << " | ";
-        cout << info[i].ano << "|";
-        cout << info[i].musicasFamosas << " | " << endl;
+        cout << info[i].identificador << " |";
+        cout << info[i].nome << " |";
+        cout << info[i].estiloMusical << " |";
+        cout << info[i].ano << " |";
+        cout << info[i].musicasFamosas << " |" << endl;
 
 
         i++;
@@ -118,11 +122,11 @@ int main ()
         info[tamanho].ano = stoi(ano);
         info[tamanho].musicasFamosas = stoi(musicasFamosas);
 
-        cout << info[tamanho].identificador << " | ";
-        cout << info[tamanho].nome << "|";
-        cout << info[tamanho].estiloMusical << " | ";
-        cout << info[tamanho].ano << "|";
-        cout << info[tamanho].musicasFamosas << " | " << endl;
+        cout << info[tamanho].identificador << " |";
+        cout << info[tamanho].nome << " |";
+        cout << info[tamanho].estiloMusical << " |";
+        cout << info[tamanho].ano << " |";
+        cout << info[tamanho].musicasFamosas << " |" << endl;
 
         // INSERINDO NO ARQUIVO
         // algo nao está certo aqui...

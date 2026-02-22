@@ -1,60 +1,100 @@
-1,Som da Aurora 1,Rock,1983,7
-2,Melodia Celeste 2,Rap,1983,11
-3,Ritmo Solar 3,Funk,2009,46
-4,Raiz Brasileira 4,Forró,2009,48
-5,Trilha do Vento 5,Eletrônica,1993,1
-6,Alma Livre 6,Rock,1982,41
-7,Batida Latina 7,Jazz,2010,37
-8,Harmonia Viva 8,Pop,1973,13
-9,Harmonia Viva 9,Blues,2015,24
-10,Sons do Pará 10,Sertanejo,2011,9
-11,Sintonia Urbana 11,Jazz,1969,29
-12,Batida Latina 12,Rock,1960,41
-13,Alma Livre 13,Blues,1981,50
-14,Caminho das Estrelas 14,Jazz,2016,10
-15,Energia Pura 15,Sertanejo,2009,46
-16,Trilha do Vento 16,Funk,2003,44
-17,Ritmo Solar 17,Eletrônica,1998,17
-18,Caminho das Estrelas 18,Funk,1979,50
-19,Batida Latina 19,Sertanejo,1983,49
-20,Brisa do Mar 20,MPB,2018,40
-21,Alma Livre 21,MPB,1962,41
-22,Ecos do Tempo 22,MPB,1985,12
-23,Raiz Brasileira 23,Pop,2001,30
-24,Universo Musical 24,Funk,1986,37
-25,Harmonia Viva 25,Blues,2018,40
-26,Nova Frequência 26,Pop,1971,47
-27,Banda Horizonte Azul 27,Rap,1999,32
-28,Ecos do Tempo 28,Eletrônica,1998,14
-29,Som da Aurora 29,Forró,1968,19
-30,Melodia Celeste 30,Jazz,1977,24
-31,Noite Tropical 31,Blues,1964,13
-32,Banda Horizonte Azul 32,MPB,2006,12
-33,Sons do Pará 33,Eletrônica,2019,32
-34,Batida Latina 34,Blues,2008,33
-35,Banda Horizonte Azul 35,Sertanejo,1979,14
-36,Universo Musical 36,Jazz,2019,11
-37,Sons do Pará 37,Jazz,2008,15
-38,Batida Latina 38,Rock,1992,38
-39,Sintonia Urbana 39,Rap,2021,29
-40,Alma Livre 40,Eletrônica,1992,39
-41,Energia Pura 41,Jazz,1990,24
-42,Raiz Brasileira 42,MPB,2003,43
-43,Caminho das Estrelas 43,Forró,1962,2
-44,Universo Musical 44,Eletrônica,1975,5
-45,Energia Pura 45,Jazz,1996,20
-46,Impacto Sonoro 46,Sertanejo,1963,23
-47,Som da Aurora 47,Forró,1965,35
-48,Energia Pura 48,MPB,2008,46
-49,Sons do Pará 49,Rock,1972,41
-50,Raiz Brasileira 50,Rock,1992,26
-51,Noite Tropical 51,Eletrônica,2022,24
-52,Caminho das Estrelas 52,Sertanejo,1981,5
-53,Sintonia Urbana 53,Rock,2002,32
-54,Noite Tropical 54,Blues,1963,9
-55,Caminho das Estrelas 55,MPB,1978,39
-56,Vozes do Norte 56,Sertanejo,1987,7
-57,Noite Tropical 57,Blues,2007,47
-58,Som da Aurora 58,Rap,1963,43
-59,Caminho das Estrelas 59,Pop,2022,1
-60,Universo Musical 60,Forró,2010,26
+1, The Beatles, Rock cl�ssico, Pop rock, 1960, 12
+2, Led Zeppelin, Hard rock, Heavy metal, 1968, 10
+3, Pink Floyd, Progressive rock, Psychedelic rock, 1965, 11
+4, Queen, Rock cl�ssico, Glam rock, 1970, 13
+5, The Rolling Stones, Rock�n�roll, Blues rock, 1962, 14
+6, AC?DC, Hard rock, Blues rock, 1973, 9
+7, Nirvana, Grunge, Alternative rock, 1987, 8
+8, Metallica, Thrash metal, Heavy metal, 1981, 10
+9, Guns N� Roses, Hard rock, Glam metal, 1985, 9
+10, Foo Fighters, Alternative rock, Post?grunge, 1994, 9
+11, Red Hot Chili Peppers, Funk rock, Alternative rock, 1983, 10
+12, Pearl Jam, Grunge, Alternative rock, 1990, 9
+13, U2, Rock alternativo, Post?punk, 1976, 11
+14, The Who, Rock cl�ssico, Power pop, 1964, 10
+15, Aerosmith, Hard rock, Blues rock, 1970, 9
+16, Radiohead, Alternative rock, Experimental rock, 1985, 12
+17, Green Day, Punk rock, Pop?punk, 1987, 9
+18, The Doors, Psychedelic rock, Acid rock, 1965, 8
+19, Black Sabbath, Heavy metal, Doom metal, 1968, 9
+20, Bon Jovi, Hard rock, Glam metal, 1983, 8
+21, Linkin Park, Nu?metal, Alternative rock, 1996, 9
+22, Muse, Alternative rock, Progressive rock, 1994, 10
+23, The Clash, Punk rock, Reggae rock, 1976, 8
+24, Oasis, Britpop, Rock alternativo, 1991, 9
+25, Coldplay, Pop rock, Alternative rock, 1996, 10
+26, Depeche Mode, Synth?rock, Dark wave, 1980, 8
+27, Smashing?Pumpkins, Alternative rock, Dream pop, 1988, 9
+28, R.E.M., College rock, Alternative rock, 1980, 9
+29, The Kinks, Rock cl�ssico, Garage rock, 1964, 8
+30, Van?Halen, Hard rock, Heavy metal, 1972, 9
+31, Blink?182, Pop?punk, Skate?punk, 1992, 8
+32, The Strokes, Indie rock, Garage rock, 1998, 8
+33, Arctic?Monkeys, Indie rock, Garage rock, 2002, 9
+34, Kings of Leon, Southern rock, Alternative rock, 1999, 8
+35, Imagine?Dragons, Alternative rock, Pop?rock, 2008, 8
+36, Paramore, Pop?punk, Emo, 2004, 8
+37, My Chemical Romance, Emo?rock, Pop?punk, 2001, 8
+38, Thirty?Seconds?to?Mars, Alternative rock, Space rock, 1998, 8
+39, The White Stripes, Garage rock, Blues rock, 1997, 8
+40, Queens?of?the?Stone Age, Stoner rock, Alternative rock, 1996, 9
+41, Weezer, Power pop, Alternative rock, 1992, 9
+42, Fall Out Boy, Pop?punk, Emo, 2001, 8
+43, Evanescence, Gothic metal, Symphonic rock, 1995, 8
+44, Slipknot, Nu?metal, Alternative metal, 1995, 8
+45, System?of?a?Down, Alternative metal, Armenian folk rock, 1994, 8
+46, The Police, New wave, Reggae rock, 1977, 9
+47, Journey, Arena rock, Soft rock, 1973, 9
+48, Creedence?Clearwater?Revival, Swamp rock, Roots rock, 1967, 8
+49, Lynyrd?Skynyrd, Southern rock, Hard rock, 1964, 8
+50, Foo Fighters, Alternative rock, Post?grunge, 1994, 9
+51, The Jesus and Mary Chain, Noise pop, Alternative rock, 1983, 7
+52, The Fall, Post?punk, Experimental rock, 1976, 6
+53, The Pogues, Irish punk folk, 1982, 6
+54, The Charlatans, Alternative rock, Madchester, 1989, 7
+55, Stone Temple Pilots, Grunge, Alternative metal, 1989, 8
+56, Soundgarden, Grunge, Alternative metal, 1984, 9
+57, Alice in Chains, Grunge, Alternative metal, 1987, 8
+58, Temple of the Dog, Grunge, Rock supergroup, 1990, 5
+59, Audioslave, Hard rock, Alternative metal, 2001, 7
+60, Rage Against the Machine, Rap metal, Alternative rock, 1991, 9
+61, Faith No More, Alternative metal, Funk metal, 1979, 7
+62, Nine Inch Nails, Industrial rock, 1988, 9
+63, Tool, Progressive metal, 1990, 8
+64, Deftones, Alternative metal, Nu?metal, 1988, 8
+65, Korn, Nu?metal, 1993, 7
+66, Limp Bizkit, Nu?metal, Rap rock, 1994, 6
+67, Staind, Alternative metal, Post?grunge, 1995, 6
+68, Chevelle, Alternative metal, 1995, 6
+69, Shinedown, Hard rock, Alternative metal, 2001, 7
+70, Halestorm, Hard rock, Alternative metal, 1997, 6
+71, The Kills, Indie rock, Garage rock, 2000, 5
+72, The Rapture, Post?punk revival, Dance?punk, 1998, 5
+73, Interpol, Post?punk revival, 1997, 7
+74, Franz Ferdinand, Indie rock, Post?punk revival, 2002, 7
+75, The xx, Indie pop, Dream pop, 2005, 6
+76, The 1975, Indie pop, Synth?pop, 2002, 7
+77, Vampire Weekend, Indie rock, Baroque pop, 2006, 8
+78, MGMT, Indie pop, Psychedelic pop, 2002, 6
+79, Bastille, Indie pop, Synth?pop, 2010, 6
+80, Walk The Moon, Indie pop, New wave, 2006, 5
+81, Panic! At the Disney, Pop punk, Emo pop, 2004, 7
+82, Iron Maiden, Heavy metal, NWOBHM, 1975, 10
+83, Judas Priest, Heavy metal, Classic metal, 1969, 9
+84, Megadeth, Thrash metal, 1983, 9
+85, Anthrax, Thrash metal, 1981, 8
+86, Pantera, Groove metal, 1981, 8
+87, Slayer, Thrash metal, 1981, 9
+88, Lamb of God, Metalcore, 1994, 7
+89, Mastodon, Progressive metal, 2000, 7
+90, Opeth, Progressive death metal, 1990, 8
+91, Dream Theater, Progressive metal, 1985, 9
+92, Yes, Progressive rock, 1968, 8
+93, Genesis, Progressive rock, Pop rock, 1967, 9
+94, King Crimson, Progressive rock, 1969, 7
+95, Emerson, Lake & Palmer, Progressive rock, 1970, 6
+96, Rush, Progressive rock, Hard rock, 1968, 9
+97, Deep Purple, Hard rock, Early heavy metal, 1968, 9
+98, Scorpions, Hard rock, Heavy metal, 1965, 8
+99, Def Leppard, Hard rock, Glam metal, 1977, 8
+100, KISS, Hard rock, Glam rock, 1973, 9
