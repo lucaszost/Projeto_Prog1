@@ -129,8 +129,9 @@ int main ()
         cout << endl;
     }
 
+
+
     
-    /*
     
     // INSERIR DADOS
     cout << "Inserir dados: " << endl;
@@ -194,7 +195,7 @@ int main ()
     int busca;
     cin >> busca;
     cout << info[busca-1].identificador << ',' << info[busca-1].nome << ',' << info[busca-1].estiloMusical << ',' << info[busca-1].ano << ',' << info[busca-1].musicasFamosas << endl;
-    */
+    
 
     // REMOVER DADOS
     int remover;
@@ -228,6 +229,7 @@ int main ()
         arquivo2.close();  
     }
 
+    ///////////////Q
 
 
     arquivo.close();
