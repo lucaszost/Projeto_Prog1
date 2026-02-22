@@ -19,6 +19,7 @@ TAREFAS
 6 - Salvar (ok)
 0 - Sair
 
+
 */
 
 #include <iostream>
@@ -172,6 +173,7 @@ int main ()
     if (conRemover == "S"){
         cin >> remover;
         ofstream arquivo2("dados.csv");
+        /*
         for (int j = 0; j < tamanho; j++){
             if (remover != j+1 ){
                 arquivo2 << info[j].identificador << ',' << info[j].nome << ',' << info[j].estiloMusical << ',' << info[j].ano << ',' << info[j].musicasFamosas << endl;
@@ -180,13 +182,14 @@ int main ()
             }
         }
 
+        */
 
 
         for (int p = 0; p < tamanho; p++){
-            if (remover != p+1 ){
+            if (p < remover ){
                 arquivo2 << info[p].identificador << ',' << info[p].nome << ',' << info[p].estiloMusical << ',' << info[p].ano << ',' << info[p].musicasFamosas << endl;
             }else{
-                p--;
+                arquivo2 << info[p + 1].identificador << ',' << info[p + 1].nome << ',' << info[p + 1].estiloMusical << ',' << info[p + 1].ano << ',' << info[p + 1].musicasFamosas << endl;
             }
         }
 
