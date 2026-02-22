@@ -1,12 +1,19 @@
-//Projeto prog 1
+/*
+EQUIPE:
+    - ANAMAYA
+    - ANNY
+    - LUCAS
+TEMA:
+
+
+*/
 
 #include <iostream>
 using namespace std;
 
 int main ()
 {
-    cout << "Teste";
-
+    cout << "hello world";
 
     return 0;
 }
