@@ -3,7 +3,21 @@ EQUIPE:
     - ANAMAYA
     - ANNY
     - LUCAS
-TEMA: Bandas de Rock
+TEMA:
+    - BANDAS DE ROCK
+
+*/
+
+/*
+TAREFAS
+
+1 - Inserir (OK)
+2 - Remover
+3 - Buscar  (ok)
+4 - Mostrar todos (OK)
+5 - Mostrar intervalo (ok)
+6 - Salvar (ok)
+0 - Sair
 
 
 */
@@ -24,13 +38,23 @@ struct BandasDeRock {
 
 };
 
-void LerDados(){}
-void EscreverDados(){}
-void RemoverDados(){}
-void RedimensionarVetor(){}
-void BuscarRegistro(){}
-void MostrarDados(){}
 
+
+void RedimensionarVetor(BandasDeRock*& info, int& tamanho){
+    int NovoTamanho = tamanho + 1;
+    BandasDeRock* New_info = new BandasDeRock[NovoTamanho];
+
+    // copiando os dados antigos
+
+    for(int i = 0; i < tamanho; i++){
+        New_info[i] = info[i];
+    }
+
+    delete[] info; // LIBERA A MEMORIA ANTIGA
+    info = New_info; // REDEFINE O VALOR DO ANTIGO VETOR PARA O NOVO E ATUALIZADO
+    tamanho = NovoTamanho; // OS NOVOS DADOS DE TAMANHO VAI PRA VARIAVEL ORIGINAL
+
+}
 
 int main ()
 {   
@@ -40,16 +64,17 @@ int main ()
     cout << "                  de Anamaya, Anny e Lucas" << endl;
     sleep(3);
     cout << " " << endl;
-    cout << "Digite que aÁ„o deseja tomar segundo o menu:" << endl;
+    cout << "Digite que aÔøΩÔøΩo deseja tomar segundo o menu:" << endl;
     cout << " " << endl;
     sleep(2);
-    string menu = "########################## MENU ##########################\n0 - SAIR\n1 - ler arquivo\n2 - gravar novo item\n3 - remover item\n4 - buscar item\n5 - salvar alteraÁıes\n##########################################################\n";
+    string menu = "########################## MENU ##########################\n0 - SAIR\n1 - ler arquivo\n2 - gravar novo item\n3 - remover item\n4 - buscar item\n5 - salvar alteraÔøΩÔøΩes\n##########################################################\n";
     cout << menu << endl;
     sleep(1);
 
     int escolha;
     cin >> escolha;
 
+    /*
     switch (escolha){
         case 0: // SAIR
             break
@@ -64,7 +89,7 @@ int main ()
         case 5: // salvar alteracoes
             
             
-    }
+    }*/
 
     int tamanho = 60;
     BandasDeRock* info = new BandasDeRock[tamanho];
@@ -74,9 +99,9 @@ int main ()
     // Abrir arquivo
     ifstream arquivo("dados.csv");
 
-    // LER TODO O ARQUIVO
+    // LER TODO O ARQUIVO (ate a posi√ß√£o 59)
     int i = 0;
-    while(getline(arquivo, linha) and i < 60){
+    while(getline(arquivo, linha) and i < tamanho){
 
         // SEPARAR OS DADOS 
         stringstream sep(linha);
@@ -104,49 +129,107 @@ int main ()
         cout << endl;
     }
 
-
+    
+    /*
+    
     // INSERIR DADOS
     cout << "Inserir dados: " << endl;
     string inserir;
     cin >> inserir;
-    if (inserir == "S"){
-        BandasDeRock* info = new BandasDeRock[tamanho++];
-        cin >> identificador >> nome >> estiloMusical >> ano >> musicasFamosas;
-        info[tamanho].identificador = stoi(identificador);
-        info[tamanho].nome = nome;
-        info[tamanho].estiloMusical = estiloMusical;
-        info[tamanho].ano = stoi(ano);
-        info[tamanho].musicasFamosas = stoi(musicasFamosas);
-
-        cout << info[tamanho].identificador << " | ";
-        cout << info[tamanho].nome << "|";
-        cout << info[tamanho].estiloMusical << " | ";
-        cout << info[tamanho].ano << "|";
-        cout << info[tamanho].musicasFamosas << " | " << endl;
-
-        // INSERINDO NO ARQUIVO
-        // algo nao est√° certo aqui...
+    while (inserir == "S"){
+        cout << tamanho << endl;
+        RedimensionarVetor(info, tamanho);
+        cout << tamanho << endl;
         
-        short int identificador_verifica;
-        cin >> identificador_verifica;
+        cout << "Nome | Estilo Musical | Ano | musicas Famosas" << endl;
+        cin >> nome >> estiloMusical >> ano >> musicasFamosas;
 
-        if (identificador_verifica > tamanho) {
-            ofstream arquivo("dados.csv");
-            short int j = identificador_verifica;
-            arquivo << info[j].identificador << ',' << info[j].nome << ',' 
-                    << info[j].estiloMusical << ',' << info[j].ano << ',' << info[j].musicasFamosas << endl;
-            
-            tamanho ++;
-        } else {
-            cout << "identificador invalido!" << endl;
+        info[tamanho - 1].identificador = tamanho;
+        info[tamanho - 1].nome = nome;
+        info[tamanho - 1].estiloMusical = estiloMusical;
+        info[tamanho - 1].ano = stoi(ano);
+        info[tamanho - 1].musicasFamosas = stoi(musicasFamosas);
+        
+        cout << info[tamanho - 1].identificador << " | ";
+        cout << info[tamanho - 1].nome << "|";
+        cout << info[tamanho - 1].estiloMusical << " | ";
+        cout << info[tamanho - 1].ano << "|";
+        cout << info[tamanho - 1].musicasFamosas << " | " << endl;
+        
+        cout << "Continuar inserindo dados? ";
+        cin >> inserir;
+    }
+
+
+    // SALVAR TODOS OS DADOS NO ARQUIVO
+
+    // FUN√á√ÉO IF PRA CONFIMAR SE QUER SALVAR O ARQUIVO
+    string salvarSN;
+    cout << "Salvar dados inseridos? S ou N ";
+    cin >> salvarSN;
+
+    if(salvarSN == "S"){
+        ofstream arquivo1("dados.csv");
+        for (int j = 0; j < tamanho; j++){
+            arquivo1 << info[j].identificador << ',' << info[j].nome << ',' << info[j].estiloMusical << ',' << info[j].ano << ',' << info[j].musicasFamosas << endl;
         }
+        arquivo1.close();
     }
 
-    for (int i = 0; i < tamanho; i++) {
-        cout << info[i].identificador << ',' << info[i].nome << ',' << info[i].estiloMusical 
-            << ',' << info[i].ano << ',' << info[i].musicasFamosas << endl;
+
+    // MOSTRAR INTERVALO
+
+    int inicial, final;
+    cout << "Valor Inicial e final: " << endl;
+
+    cin >> inicial >> final;
+
+    for (int k = inicial -1; k < final; k++){
+        cout << info[k].identificador << ',' << info[k].nome << ',' << info[k].estiloMusical << ',' << info[k].ano << ',' << info[k].musicasFamosas << endl;
+
     }
+
+    // BUSCAR INFORMA√á√ïES 
+    cout << "Busca por id: " << endl;
+    int busca;
+    cin >> busca;
+    cout << info[busca-1].identificador << ',' << info[busca-1].nome << ',' << info[busca-1].estiloMusical << ',' << info[busca-1].ano << ',' << info[busca-1].musicasFamosas << endl;
+    */
+
+    // REMOVER DADOS
+    int remover;
+    string conRemover;
+    cout << "Remover dados: " << endl;
+    cin >> conRemover;
     
+    if (conRemover == "S"){
+        cin >> remover;
+        ofstream arquivo2("dados.csv");
+        /*
+        for (int j = 0; j < tamanho; j++){
+            if (remover != j+1 ){
+                arquivo2 << info[j].identificador << ',' << info[j].nome << ',' << info[j].estiloMusical << ',' << info[j].ano << ',' << info[j].musicasFamosas << endl;
+            }else{
+                arquivo2 << info[-j].identificador << ',' << info[-j].nome << ',' << info[-j].estiloMusical << ',' << info[-j].ano << ',' << info[-j].musicasFamosas << endl;
+            }
+        }
+
+        */
+
+
+        for (int p = 0; p < tamanho; p++){
+            if (p < remover ){
+                arquivo2 << info[p].identificador << ',' << info[p].nome << ',' << info[p].estiloMusical << ',' << info[p].ano << ',' << info[p].musicasFamosas << endl;
+            }else{
+                arquivo2 << info[p + 1].identificador << ',' << info[p + 1].nome << ',' << info[p + 1].estiloMusical << ',' << info[p + 1].ano << ',' << info[p + 1].musicasFamosas << endl;
+            }
+        }
+
+        arquivo2.close();  
+    }
+
+
+
     arquivo.close();
     return 0;
 }
