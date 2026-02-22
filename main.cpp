@@ -3,7 +3,7 @@ EQUIPE:
     - ANAMAYA
     - ANNY
     - LUCAS
-TEMA:
+TEMA: Bandas de Rock
 
 
 */
@@ -12,7 +12,7 @@ TEMA:
 #include <fstream>
 #include <sstream>
 #include <string>
-
+#include <unistd.h>
 using namespace std;
 
 struct BandasDeRock {
@@ -33,7 +33,38 @@ void MostrarDados(){}
 
 
 int main ()
-{
+{   
+    cout << endl;
+    cout << "                   Seja Bem-Vindo(a) ao" << endl;
+    cout << "            Sistema de arquivo de bandas de Rock" << endl;
+    cout << "                  de Anamaya, Anny e Lucas" << endl;
+    sleep(3);
+    cout << " " << endl;
+    cout << "Digite que ação deseja tomar segundo o menu:" << endl;
+    cout << " " << endl;
+    sleep(2);
+    string menu = "########################## MENU ##########################\n0 - SAIR\n1 - ler arquivo\n2 - gravar novo item\n3 - remover item\n4 - buscar item\n5 - salvar alterações\n##########################################################\n";
+    cout << menu << endl;
+    sleep(1);
+
+    int escolha;
+    cin >> escolha;
+
+    switch (escolha){
+        case 0: // SAIR
+            break
+        case 1: // ler arquivo
+            LerDados()
+        case 2: // gravar novo item
+            EscreverDados()
+        case 3: // remover item
+            RemoverDados()
+        case 4: // buscar item
+            BuscarRegistro()
+        case 5: // salvar alteracoes
+            
+            
+    }
 
     int tamanho = 60;
     BandasDeRock* info = new BandasDeRock[tamanho];
@@ -68,7 +99,7 @@ int main ()
         cout << info[i].ano << "|";
         cout << info[i].musicasFamosas << " | " << endl;
 
-        
+
         i++;
         cout << endl;
     }
@@ -95,11 +126,27 @@ int main ()
 
         // INSERINDO NO ARQUIVO
         // algo nao estÃ¡ certo aqui...
-        ofstream arquivo("dados.csv");
-        for(int j = 0; j < tamanho; j++){
-            arquivo << info[j].identificador << ',' << info[j].nome << ',' << info[j].estiloMusical << ',' << info[j].ano << ',' << info[j].musicasFamosas << endl;
+        
+        short int identificador_verifica;
+        cin >> identificador_verifica;
+
+        if (identificador_verifica > tamanho) {
+            ofstream arquivo("dados.csv");
+            short int j = identificador_verifica;
+            arquivo << info[j].identificador << ',' << info[j].nome << ',' 
+                    << info[j].estiloMusical << ',' << info[j].ano << ',' << info[j].musicasFamosas << endl;
+            
+            tamanho ++;
+        } else {
+            cout << "identificador invalido!" << endl;
         }
     }
+
+    for (int i = 0; i < tamanho; i++) {
+        cout << info[i].identificador << ',' << info[i].nome << ',' << info[i].estiloMusical 
+            << ',' << info[i].ano << ',' << info[i].musicasFamosas << endl;
+    }
+    
     arquivo.close();
     return 0;
 }
