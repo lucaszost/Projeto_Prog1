@@ -16,12 +16,11 @@ TAREFAS
 3 - Buscar  (ok)
 4 - Mostrar todos (OK)
 5 - Mostrar intervalo (ok)
-6 - Salvar (ok)
-0 - Sair (ok)
+6 - Salvar (OK)
+0 - Sair (OK)
 
 
 */
-
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -38,9 +37,18 @@ struct BandasDeRock {
 
 };
 
-void MostrarMenu(){
-    string menu = "########################## MENU ##########################\n0 - INSERIR\n1 - REMOVER\n2 - BUSCAR\n3 - MOSTRAR DADOS\n4 - MOSTRAR INVERVALO\n5 - SALVAR\n-1 - SAIR \n##########################################################\n";
-    cout << menu << endl;
+void MostrarMenu() {
+    string menu = 
+        "########################## MENU ##########################\n"
+        "0 - SAIR\n"
+        "1 - MOSTRAR DADOS\n"
+        "2 - MOSTRAR INTERVALO\n"
+        "3 - BUSCAR DADOS\n"
+        "4 - INSERIR DADOS\n"
+        "5 - REMOVER\n"
+        "##########################################################\n";
+
+    cout << menu;
 }
 
 void RedimensionarVetor(BandasDeRock*& info, int& tamanho){
@@ -59,56 +67,12 @@ void RedimensionarVetor(BandasDeRock*& info, int& tamanho){
 
 }
 
-
-void InserirDados(BandasDeRock*& info, int& tamanho){
-    string nome, estiloMusical, ano, musicasFamosas;
-
-    // INSERIR DADOS
-    cout << "Inserir dados: " << endl;
-    string inserir;
-    cin >> inserir;
-    while (inserir == "S"){
-        RedimensionarVetor(info, tamanho);
-        
-        cout << "Nome | Estilo Musical | Ano | musicas Famosas" << endl;
-        cin >> nome >> estiloMusical >> ano >> musicasFamosas;
-
-        info[tamanho - 1].identificador = tamanho;
-        info[tamanho - 1].nome = nome;
-        info[tamanho - 1].estiloMusical = estiloMusical;
-        info[tamanho - 1].ano = stoi(ano);
-        info[tamanho - 1].musicasFamosas = stoi(musicasFamosas);
-        
-        cout << info[tamanho - 1].identificador << " | ";
-        cout << info[tamanho - 1].nome << "|";
-        cout << info[tamanho - 1].estiloMusical << " | ";
-        cout << info[tamanho - 1].ano << "|";
-        cout << info[tamanho - 1].musicasFamosas << " | " << endl;
-        
-        cout << "Continuar inserindo dados? ";
-        cin >> inserir;
-    }
-
-    // SALVAR TODOS OS DADOS NO ARQUIVO
-    ofstream arquivo1("dados.csv");
-    for (int j = 0; j < tamanho; j++){
-        arquivo1 << info[j].identificador << ',' << info[j].nome << ',' << info[j].estiloMusical << ',' << info[j].ano << ',' << info[j].musicasFamosas << endl;
-    }
-    arquivo1.close();
-    cout << "Dados salvos com sucesso!";
-    
-
-    MostrarMenu();
-}
-
 void MostrarDados(BandasDeRock* info, int tamanho){
 
     string linha, identificador, nome, estiloMusical, ano, musicasFamosas;
     
     // Abrir arquivo
     ifstream arquivo("dados.csv");
-
-    // LER TODO O ARQUIVO (ate a posição 59)
     int i = 0;
     while(getline(arquivo, linha) and i < tamanho){
 
@@ -127,6 +91,7 @@ void MostrarDados(BandasDeRock* info, int tamanho){
         info[i].ano = stoi(ano);
         info[i].musicasFamosas = stoi(musicasFamosas);
 
+        cout << i+1 << "ª: " ;
         cout << info[i].identificador << " | ";
         cout << info[i].nome << "|";
         cout << info[i].estiloMusical << " | ";
@@ -143,143 +108,187 @@ void MostrarDados(BandasDeRock* info, int tamanho){
 
 }
 
+void MostrarIntervalo(BandasDeRock* info, int tamanho){
+    int inicial, final;
+    cout << "MOSTRAR INTERVALO DE DADOS! " << endl;
+    cout << "Id inicial: " << endl;
+    cin >> inicial;
+    cout << "Id final: " << endl;
+    cin >> final;
 
-int Sair(int escolha){
-    return -1;
-}
+    inicial--;
+    final--;
 
-void SalvarDados(BandasDeRock*& info, int tamanho){
+    string linha, identificador, nome, estiloMusical, ano, musicasFamosas;
+    ifstream arquivo("dados.csv");
+    int i = 0;
+    while(getline(arquivo, linha) and i < tamanho){
+
+        // SEPARAR OS DADOS 
+        stringstream sep(linha);
+        // IMPRIMIR DADOS SEPARADOS
+        getline(sep, identificador, ',');
+        getline(sep, nome, ',');
+        getline(sep, estiloMusical, ',');
+        getline(sep, ano, ',');
+        getline(sep, musicasFamosas, ',');
+
+        info[i].identificador = stoi(identificador);
+        info[i].nome = nome;
+        info[i].estiloMusical = estiloMusical;
+        info[i].ano = stoi(ano);
+        info[i].musicasFamosas = stoi(musicasFamosas);
+
+        if(inicial <= i  and i <= final){
+            cout << i+1 << "ª: " ;
+            cout << info[i].identificador << " | ";
+            cout << info[i].nome << "|";
+            cout << info[i].estiloMusical << " | ";
+            cout << info[i].ano << "|";
+            cout << info[i].musicasFamosas << " | " << endl;
+        }
+
+        i++;
+    
+    }
+
+    arquivo.close();
     
 
-
-}
-
-void MostrarIntervalo(BandasDeRock*& info, int tamanho){
-    // MOSTRAR INTERVALO
-
-    int inicial, final;
-    cout << "Valor Inicial e final: " << endl;
-
-    cin >> inicial >> final;
-
-    for (int k = inicial -1; k < final; k++){
-        cout << info[k].identificador << ',' << info[k].nome << ',' << info[k].estiloMusical << ',' << info[k].ano << ',' << info[k].musicasFamosas << endl;
-
-    }
     MostrarMenu();
 
 }
 
-void BuscarDados(BandasDeRock*& info){
-    // BUSCAR INFORMAÇÕES 
+void BuscarDados(BandasDeRock* info, int tamanho){
     cout << "Busca por id: " << endl;
     int busca;
     cin >> busca;
-    for (int i = 0; i < busca; i++){
-        if (info[i].identificador == busca){
-            cout << info[i].identificador << ',' << info[i].nome << ',' << info[i].estiloMusical << ',' << info[i].ano << ',' << info[i].musicasFamosas << endl;
-        }
+    cout << busca << "ª: " ;
+    busca--;
+
+    if (busca < tamanho){
+        cout << info[busca].identificador << " | ";
+        cout << info[busca].nome << "|";
+        cout << info[busca].estiloMusical << " | ";
+        cout << info[busca].ano << "|";
+        cout << info[busca].musicasFamosas << " | " << endl;
+
+    }else{
+        cout << "Valor inválido!" << endl;
     }
+
     MostrarMenu();
 }
 
-void RemoverDados(BandasDeRock*& info){
+void InserirDados(BandasDeRock*& info, int& tamanho){
 
-    // REMOVER DADOS
-    int remover;
-    string conRemover;
-    cout << "Remover dados: " << endl;
-    cin >> conRemover;
+    string nome, estiloMusical, ano, musicasFamosas;
+    cout << "===INSERIR DADOS === " << endl;
+    cout << "Nome: " << endl;
+    cin >> nome;
+    cout << "Estilo Musical: " << endl;
+    cin >> estiloMusical;
+    cout << "Ano: " << endl;
+    cin >> ano;
+    cout << "Q. Musicas Famosas: " << endl;
+    cin >> musicasFamosas;
+
+    RedimensionarVetor(info, tamanho);
+    int n_tam = tamanho -1;
+
+    info[n_tam].identificador = tamanho;
+    info[n_tam].nome = nome;
+    info[n_tam].estiloMusical = estiloMusical;
+    info[n_tam].ano = stoi(ano);
+    info[n_tam].musicasFamosas = stoi(musicasFamosas);
+
+    cout << endl;
+    cout << "Dados inseridos): " << endl;
+    cout << endl;
     
-    /*
-    if (conRemover == "S"){
-        cin >> remover;
-        ofstream arquivo2("dados.csv");
-        /*
-        for (int j = 0; j < tamanho; j++){
-            if (remover != j+1 ){
-                arquivo2 << info[j].identificador << ',' << info[j].nome << ',' << info[j].estiloMusical << ',' << info[j].ano << ',' << info[j].musicasFamosas << endl;
-            }else{
-                arquivo2 << info[-j].identificador << ',' << info[-j].nome << ',' << info[-j].estiloMusical << ',' << info[-j].ano << ',' << info[-j].musicasFamosas << endl;
-            }
-        }
+    cout << info[n_tam].identificador << " | ";
+    cout << info[n_tam].nome << "|";
+    cout << info[n_tam].estiloMusical << " | ";
+    cout << info[n_tam].ano << "|";
+    cout << info[n_tam].musicasFamosas << " | " << endl;
 
-       
+    cout << "==============" << endl;
 
+    // SALVAR DADOS:
+    string salvar;
+    cout << "SALVAR ? (S/N)" << endl;
+    cin >> salvar;
+    if(salvar == "S"){
+        ofstream arquivo("dados.csv", ios::app);
+        if (arquivo.is_open()) {
+            arquivo << endl 
+                    << info[n_tam].identificador << ","
+                    << info[n_tam].nome << ","
+                    << info[n_tam].estiloMusical << ","
+                    << info[n_tam].ano << ","
+                    << info[n_tam].musicasFamosas << "\n";
 
-        for (int p = 0; p < tamanho; p++){
-            if (p+1 < remover ){
-                arquivo2 << info[p].identificador << ',' << info[p].nome << ',' << info[p].estiloMusical << ',' << info[p].ano << ',' << info[p].musicasFamosas << endl;
-            }else{
-                arquivo2 << info[p-1].identificador << ',' << info[p-1].nome << ',' << info[p-1].estiloMusical << ',' << info[p-1].ano << ',' << info[p-1].musicasFamosas << endl;
-            }
-        }
-
-        arquivo2.close();  
+            arquivo.close();
     }
-    
-    */
+    }
 
+    MostrarMenu();
+    
 }
 
+void RemoverDados(){
+
+}
 
 int main ()
 {   
+    
+    ifstream arq("dados.csv");
+    string linha;
+    int tamanho = 0;
 
-    //DECLARANDO VARIAVEIS
+    //VER QUANTAS LINHAS HA NO ARQUIVO
+    
+    while(getline(arq, linha)){
+        tamanho++;
+    }
 
-    int tamanho = 60;
+    arq.close();
+
     BandasDeRock* info = new BandasDeRock[tamanho];
-    string linha, dado;
     string identificador, nome, estiloMusical, ano, musicasFamosas;
-
-
-    //MOSTRA A TELA INICIAL
-    cout << endl;
-    cout << "                   Seja Bem-Vindo(a) ao" << endl;
-    cout << "            Sistema de arquivo de bandas de Rock" << endl;
-    cout << "                  de Anamaya, Anny e Lucas" << endl;
-    sleep(3);
-    cout << " " << endl;
-    cout << "Digite que a��o deseja tomar segundo o menu:" << endl;
-    cout << " " << endl;
-    sleep(2);
+    
     MostrarMenu();
-    sleep(1);
 
     int escolha;
     cin >> escolha;
-    while(escolha != -1){
-        switch (escolha){
-            case 0: 
-                InserirDados(info, tamanho);
-                break;
-            case 1: 
-                RemoverDados(info);
-                break;
-            case 2: 
-                BuscarDados(info);
-                break;
-            case 3: 
+    while(escolha != 0){
+        switch(escolha){
+            case 1:
                 MostrarDados(info, tamanho);
                 break;
-            case 4: 
+            case 2:
                 MostrarIntervalo(info, tamanho);
                 break;
-            case 5:    
-                SalvarDados(info, tamanho);
+            case 3:
+                BuscarDados(info, tamanho);
                 break;
-            case -1:
-                Sair(escolha);
+            case 4:
+                InserirDados(info, tamanho);
                 break;
+            case 5:
+                RemoverDados(info, tamanho);
             default:
-                cout << "Algo de errado não parece certo ! " << endl;
+                cout << "Opção invalida!";
                 break;
         }
 
+        cout << "NOVA FUNÇÃO: " << endl;
         cin >> escolha;     
     }
 
+
+    cout << "FINAL DO PROGRAMA!" << endl;
 
  
     return 0;
