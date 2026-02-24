@@ -39,8 +39,15 @@ struct BandasDeRock {
 };
 
 void MostrarMenu(){
-    string menu = "########################## MENU ##########################\n0 - INSERIR\n1 - REMOVER\n2 - BUSCAR\n3 - MOSTRAR DADOS\n4 - MOSTRAR INVERVALO\n5 - SALVAR\n-1 - SAIR \n##########################################################\n";
-    cout << menu << endl;
+    cout << "########################## MENU ##########################" << endl;
+    cout << "0 - INSERIR" << endl;
+    cout << "1 - REMOVER" << endl;
+    cout << "2 - BUSCAR" << endl;
+    cout << "3 - MOSTRAR DADOS" << endl;
+    cout << "4 - MOSTRAR INVERVALO" << endl;
+    cout << "5 - SALVAR" << endl;
+    cout << "-1 - SAIR" << endl;
+    cout << "##########################################################" << endl;
 }
 
 void RedimensionarVetor(BandasDeRock*& info, int& tamanho){
