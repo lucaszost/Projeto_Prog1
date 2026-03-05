@@ -1,0 +1,100 @@
+1,The Beatles,Rock clássico/Pop rock,1960,12
+2,Led Zeppelin, Hard rock/Heavy metal,1968,10
+3,Pink Floyd,Progressive rock/Psychedelic rock,1965,11
+4,Queen,Rock clássico/Glam rock,1970,13
+5,The Rolling Stones,Rock n roll/Blues rock,1962,14
+6,AC/DC,Hard rock/Blues rock,1973,9
+7,Nirvana,Grunge/Alternative rock,1987,8
+8,Metallica,Thrash metal/Heavy metal,1981,10
+9,Guns N Roses,Hard rock/Glam metal,1985,9
+10,Foo Fighters,Alternative rock/Post grunge,1994,9
+11,Red Hot Chili Peppers,Funk rock/Alternative rock,1983,10
+12,Pearl Jam,Grunge/Alternative rock,1990,9
+13,U2,Rock alternativo/Post punk,1976,11
+14,The Who,Rock clássico/Power pop,1964,10
+15,Aerosmith,Hard rock/Blues rock,1970,9
+16,Radiohead,Alternative rock/Experimental rock,1985,12
+17,Green Day,Punk rock/Pop punk,1987,9
+18,The Doors,Psychedelic rock/Acid rock,1965,8
+19,Black Sabbath,Heavy metal/Doom metal,1968,9
+20,Bon Jovi,Hard rock/Glam metal,1983,8
+21,Linkin Park, Nu metal/Alternative rock,1996,9
+22,Muse,Alternative rock/Progressive rock,1994,10
+23,The Clash,Punk rock/Reggae rock,1976,8
+24,Oasis,Britpop/Rock alternativo,1991,9
+25,Coldplay,Pop rock/Alternative rock,1996,10
+26,Depeche Mode,Synthrock/Dark wave,1980,8
+27,Smashing Pumpkins,Alternative rock/Dream pop,1988,9
+28,R.E.M.,College rock/Alternative rock,1980,9
+29,The Kinks,Rock clássico/Garage rock,1964,8
+30,Van Halen,Hard rock/Heavy metal,1972,9
+31,Blink 182,Pop punk/Skate punk,1992,8
+32,The Strokes,Indie rock/Garage rock,1998,8
+33,Arctic Monkeys,Indie rock/Garage rock,2002,9
+34,Kings of Leon,Southern rock/Alternative rock,1999,8
+35,Imagine Dragons,Alternative rock/Pop rock,2008,8
+36,Paramore,Pop punk/Emo,2004,8
+37,My Chemical Romance,Emo rock/Pop punk,2001,8
+38,Thirty Seconds to Mars,Alternative rock/Space rock,1998,8
+39,The White Stripes,Garage rock/Blues rock,1997,8
+40,Queens of the Stone Age,Stoner rock/Alternative rock,1996,9
+41,Weezer,Power pop/Alternative rock,1992,9
+42,Fall Out Boy,Pop punk/Emo,2001,8
+43,Evanescence,Gothic metal/Symphonic rock,1995,8
+44,Slipknot,Nu metal/Alternative metal,1995,8
+45,System of a Down,Alternative metal/Armenian folk rock,1994,8
+46,The Police,New wave/Reggae rock,1977,9
+47,Journey,Arena rock/Soft rock,1973,9
+48,Creedence Clearwater Revival,Swamp rock/Roots rock,1967,8
+49,Lynyrd Skynyrd,Southern rock/Hard rock,1964,8
+50,Foo Fighters,Alternative rock/Post grunge,1994,9
+51,The Jesus and Mary Chain,Noise pop/Alternative rock,1983,7
+52,The Fall,Post punk/Experimental rock,1976,6
+53,The Pogues,Irish punk folk,1982,6
+54,The Charlatans,Alternative rock/Madchester,1989,7
+55,Stone Temple Pilots,Grunge/Alternative metal,1989,8
+56,Soundgarden,Grunge/Alternative metal,1984,9
+57,Alice in Chains,Grunge/Alternative metal,1987,8
+58,Temple of the Dog,Grunge/Rock supergroup,1990,5
+59,Audioslave,Hard rock/Alternative metal,2001,7
+60,Rage Against the Machine,Rap metal/Alternative rock,1991,9
+61,Faith No More,Alternative metal/Funk metal,1979,7
+62,Nine Inch Nails,Industrial rock,1988,9
+63,Tool,Progressive metal,1990,8
+64,Deftones,Alternative metal/Nu metal,1988,8
+65,Korn,Nu metal,1993,7
+66,Limp Bizkit,Nu metal/Rap rock,1994,6
+67,Staind,Alternative metal/Post grunge,1995,6
+68,Chevelle,Alternative metal,1995,6
+69,Shinedown,Hard rock/Alternative metal,2001,7
+70,Halestorm,Hard rock/Alternative metal,1997,6
+71,The Kills,Indie rock/Garage rock,2000,5
+72,The Rapture,Post punk revival/Dance punk,1998,5
+73,Interpol,Post punk revival,1997,7
+74,Franz Ferdinand,Indie rock/Post punk revival,2002,7
+75,The xx,Indie pop/Dream pop,2005,6
+76,The 1975,Indie pop/Synth pop,2002,7
+77,Vampire Weekend,Indie rock/Baroque pop,2006,8
+78,MGMT,Indie pop/Psychedelic pop,2002,6
+79,Bastille,Indie pop/Synth pop,2010,6
+80,Walk The Moon,Indie pop/New wave,2006,5
+81,Panic! At the Disco,Pop punk/Emo pop,2004,7
+82,Iron Maiden,Heavy metal/NWOBHM,1975,10
+83,Judas Priest,Heavy metal/Classic metal,1969,9
+84,Megadeth,Thrash metal,1983,9
+85,Anthrax,Thrash metal,1981,8
+86,Pantera,Groove metal,1981,8
+87,Slayer,Thrash metal,1981,9
+88,Lamb of God,Metalcore,1994,7
+89,Mastodon,Progressive metal,2000,7
+90,Opeth,Progressive death metal,1990,8
+91,Dream Theater,Progressive metal,1985,9
+92,Yes,Progressive rock,1968,8
+93,Genesis,Progressive rock/Pop rock,1967,9
+94,King Crimson,Progressive rock,1969,7
+95,Emerson,Lake & Palmer/Progressive rock,1970,6
+96,Rush,Progressive rock/Hard rock,1968,9
+97,Deep Purple,Hard rock/Early heavy metal,1968,9
+98,Scorpions,Hard rock/Heavy metal,1965,8
+99,Def Leppard,Hard rock/Glam metal,1977,8
+100,KISS,Hard rock/Glam rock,1973,9
